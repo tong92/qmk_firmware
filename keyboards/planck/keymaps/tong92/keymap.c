@@ -174,6 +174,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           backlight_step();
         #endif
       }
+      return false;
       break;
     case MOUSE:
       if (record->event.pressed) {
@@ -190,5 +191,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
       break;
   }
-  return MACRO_NONE;
+  return true;
 };
